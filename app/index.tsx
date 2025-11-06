@@ -7,7 +7,6 @@ export default function Onboarding() {
   const router = useRouter();
   return (
     <View style={[ appStyles.indexContent, appStyles.container]}>
-    
         <View>
           <View style={appStyles.headerContainer}>
             <Text style={appStyles.headerText}>Welcome to the</Text>

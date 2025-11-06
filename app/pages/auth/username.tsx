@@ -2,18 +2,15 @@ import AuthScreenWrapper from "@/app/pages/auth/wrapper";
 import { appStyles } from "@/styles/auth";
 import {
   Text,
-  TextInput,
   View,
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import { useState } from "react";
 import { router } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function OTP() {
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
+export default function Username() {
 
   return (
     <AuthScreenWrapper>
@@ -22,32 +19,23 @@ export default function OTP() {
         style={{ flex: 1, justifyContent: "space-between" }}
       >
         <View style={[appStyles.container, appStyles.phonePage]}>
-          <Text style={appStyles.otpHeaderText}>
-            Enter the code we just texted you
+          <Text style={appStyles.phoneHeaderText}>
+            Your username
           </Text>
 
-          <View style={appStyles.inputContainer}>
-            <TextInput
-              style={appStyles.otpTextInput}
-              placeholder="• • • • • •"
-              placeholderTextColor="#999"
-              value={phoneNumber}
-              onChangeText={setPhoneNumber}
-              keyboardType="number-pad"
-              maxLength={6}
-            />
-          </View>
-
-          <Text style={appStyles.termsText}>
-            Didn&apos;t get it?{" "}
-            <Text style={appStyles.linkText}>Tap to resend.</Text>
+          <Text style={appStyles.username}>
+            @jonunflow
           </Text>
+
+          <Text style={appStyles.changeUsername}>
+            Change your username
+          </Text>
+
         </View>
-
         <TouchableOpacity
           style={appStyles.nextButtonContainer}
           onPress={() => {
-            router.push("/pages/auth/name");
+            router.push("/pages/auth/age");
           }}
         >
           <LinearGradient

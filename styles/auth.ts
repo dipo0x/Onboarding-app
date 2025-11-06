@@ -5,7 +5,7 @@ const { width } = Dimensions.get('window');
 export const colors = {
   primary: "#181619",
   background: '#000',
-  inputBackground: '#333',
+  inputBackground: '#232323',
   white: '#FFF',
   grayText: '#999',
   lightGray: '#AAA',
@@ -87,12 +87,25 @@ export const appStyles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "Manrope-Bold",
   },
+  username: {
+    paddingTop: 50,
+    color: "white",
+    fontSize: 40,
+    fontWeight: "regular",
+  },
+  changeUsername: {
+    paddingTop: 15,
+    color: "#E3428F",
+    fontSize: 20,
+    fontWeight: "semibold"
+  },
   inputContainer: {
     flexDirection: 'row',
     backgroundColor: colors.inputBackground,
     borderRadius: 16,
     marginHorizontal: 20,
     marginTop: 40,
+    marginBottom: -17,
     paddingVertical: 15,
     paddingHorizontal: 15,
     outlineColor: colors.outlineColor,
@@ -122,47 +135,38 @@ export const appStyles = StyleSheet.create({
     fontSize: 18,
   },
   termsText: {
-    color: colors.grayText,
+    color: colors.white,
     textAlign: 'center',
-    fontSize: 14,
-    marginHorizontal: 40,
-    marginTop: 20,
+    fontSize: 17,
+    marginHorizontal: 20,
+    marginTop: 40,
     lineHeight: 20,
   },
   linkText: {
     color: colors.pinkLink,
     fontWeight: 'bold',
   },
-
-  nextButton: {
-    position: 'absolute',
-    right: 30,
-    top: width * 0.7, 
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.pinkLink, 
-    shadowColor: colors.pinkLink,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 8,
+  nextButtonContainer: {
+    alignSelf: 'flex-end',
+    marginRight: 20,
+    width: 70,
+    height: 70,
+    borderRadius: 100,
+    overflow: "hidden",
+    marginBottom: 30
   },
   nextButtonText: {
     color: colors.white,
     fontSize: 30,
     lineHeight: 30,
   },
-
   keypad: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
     paddingHorizontal: 10,
-    paddingBottom: 20, 
+    paddingBottom: 20,
     backgroundColor: colors.background,
   },
   keyRow: {
@@ -171,8 +175,8 @@ export const appStyles = StyleSheet.create({
     marginBottom: 10,
   },
   keyContainer: {
-    width: (width - 60) / 3, 
-    height: width * 0.15, 
+    width: (width - 60) / 3,
+    height: width * 0.15,
     backgroundColor: colors.inputBackground,
     borderRadius: 10,
     justifyContent: 'center',
@@ -182,7 +186,7 @@ export const appStyles = StyleSheet.create({
   keyNum: {
     color: colors.white,
     fontSize: 24,
-    fontWeight: '300', 
+    fontWeight: '300'
   },
   keyLetters: {
     color: colors.lightGray,
@@ -203,8 +207,20 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     color: colors.white,
     fontSize: 30,
-    letterSpacing: 3.0,
     textAlign: "center"
   },
-
+  nameTextInput: {
+    flex: 1,
+    height: 30,
+    color: colors.white,
+    fontSize: 15,
+    marginLeft: 10,
+  },
+  nameTextInput2: {
+    flex: 1,
+    height: 30,
+    color: colors.white,
+    fontSize: 15,
+    marginLeft: 10
+  },
 });

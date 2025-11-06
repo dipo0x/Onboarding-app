@@ -23,13 +23,13 @@ export default function OTP() {
       >
         <View style={[appStyles.container, appStyles.phonePage]}>
           <Text style={appStyles.otpHeaderText}>
-            Enter the code we just texted you
+            What&apos;s your age
           </Text>
 
           <View style={appStyles.inputContainer}>
             <TextInput
-              style={appStyles.otpTextInput}
-              placeholder="• • • • • •"
+              style={appStyles.nameTextInput}
+              placeholder="Age"
               placeholderTextColor="#999"
               value={phoneNumber}
               onChangeText={setPhoneNumber}
@@ -39,8 +39,7 @@ export default function OTP() {
           </View>
 
           <Text style={appStyles.termsText}>
-            Didn&apos;t get it?{" "}
-            <Text style={appStyles.linkText}>Tap to resend.</Text>
+            This is to personalize your experience and will not be visible on your profile.
           </Text>
         </View>
 
