@@ -12,6 +12,7 @@ export const colors = {
   pinkLink: '#FF69B4',
   divider: '#555',
   outlineColor: "#4C4C4C",
+  placeHolderColor: "#7D7D7D"
 };
 
 export const appStyles = StyleSheet.create({
@@ -64,7 +65,7 @@ export const appStyles = StyleSheet.create({
     fontFamily: "Manrope-Bold",
   },
   loginButtonText: {
-    marginTop: 30,
+    marginTop: 40,
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
@@ -76,9 +77,8 @@ export const appStyles = StyleSheet.create({
     fontWeight: "bold",
   },
   phonePage: {
-    flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    
     paddingTop: 40,
   },
   phoneHeaderText: {
@@ -222,5 +222,49 @@ export const appStyles = StyleSheet.create({
     color: colors.white,
     fontSize: 15,
     marginLeft: 10
+  },
+   profilePictureContainer: {
+    alignItems: "center",
+    transform: [{ translateY: 70 }],
+    borderRadius: "100%",
+    width: 220,
+    height: 220,
+  },
+  profilePictureButton: {
+    marginBottom: 0,
+    width: 365,
+    height: 60,
+    borderRadius: 25,
+    overflow: "hidden",
+  },
+   profilePictureNextButton: {
+    justifyContent: "space-between",
+    paddingTop: 370,
+  },
+  skipButton: {
+    position: "absolute",
+    top: 70,
+    right: 30,
+    zIndex: 1,
+  },
+  skipButtonText: {
+    color: colors.placeHolderColor,
+    fontFamily: "Manrope-SemiBold",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  skipButtonStyle: {
+    color: colors.white
+  },
+  skipHeaderText: {
+    paddingTop: 30,
+    paddingLeft: 30,
+    paddingRight: 30,
+    textAlign: "center",
+    flexDirection: 'row',
+    color: "white",
+    fontSize: 24,
+    fontWeight: "bold",
+    fontFamily: "Manrope-Bold",
   },
 });

@@ -1,36 +1,34 @@
-import AuthScreenWrapper from "@/app/pages/auth/wrapper";
-import { appStyles } from "@/styles/auth";
+import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import { appStyles, colors } from "@/styles/auth.style";
+import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
+import { useState } from "react";
 import {
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { useState } from "react";
-import { router } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function OTP() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
   return (
-    <AuthScreenWrapper>
+    <BackButtonWrapper>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1, justifyContent: "space-between" }}
       >
         <View style={[appStyles.container, appStyles.phonePage]}>
-          <Text style={appStyles.otpHeaderText}>
-            What&apos;s your age
-          </Text>
+          <Text style={appStyles.otpHeaderText}>What&apos;s your age</Text>
 
           <View style={appStyles.inputContainer}>
             <TextInput
               style={appStyles.nameTextInput}
               placeholder="Age"
-              placeholderTextColor="#999"
+              placeholderTextColor={ colors.placeHolderColor }
               value={phoneNumber}
               onChangeText={setPhoneNumber}
               keyboardType="number-pad"
@@ -39,14 +37,15 @@ export default function OTP() {
           </View>
 
           <Text style={appStyles.termsText}>
-            This is to personalize your experience and will not be visible on your profile.
+            This is to personalize your experience and will not be visible on
+            your profile.
           </Text>
         </View>
 
         <TouchableOpacity
           style={appStyles.nextButtonContainer}
           onPress={() => {
-            router.push("/pages/auth/name");
+            router.push("/pages/auth/profile_picture");
           }}
         >
           <LinearGradient
@@ -59,6 +58,6 @@ export default function OTP() {
           </LinearGradient>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    </AuthScreenWrapper>
+    </BackButtonWrapper>
   );
 }

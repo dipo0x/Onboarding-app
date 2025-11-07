@@ -1,22 +1,22 @@
-import AuthScreenWrapper from "@/app/pages/auth/wrapper";
-import { appStyles } from "@/styles/auth";
+import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import { appStyles, colors } from "@/styles/auth.style";
+import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
+import { useState } from "react";
 import {
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { useState } from "react";
-import { router } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function Phone() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
   return (
-    <AuthScreenWrapper>
+    <BackButtonWrapper>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1, justifyContent: "space-between" }}
@@ -33,7 +33,7 @@ export default function Phone() {
             <TextInput
               style={appStyles.textInput}
               placeholder="Phone number"
-              placeholderTextColor="#999"
+              placeholderTextColor={ colors.placeHolderColor }
               value={phoneNumber}
               onChangeText={setPhoneNumber}
               keyboardType="numeric"
@@ -62,6 +62,6 @@ export default function Phone() {
           </LinearGradient>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    </AuthScreenWrapper>
+    </BackButtonWrapper>
   );
 }

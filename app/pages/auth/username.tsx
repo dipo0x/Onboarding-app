@@ -1,36 +1,28 @@
-import AuthScreenWrapper from "@/app/pages/auth/wrapper";
-import { appStyles } from "@/styles/auth";
+import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import { appStyles } from "@/styles/auth.style";
+import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import {
-  Text,
-  View,
-  TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { router } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function Username() {
-
   return (
-    <AuthScreenWrapper>
+    <BackButtonWrapper>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1, justifyContent: "space-between" }}
       >
         <View style={[appStyles.container, appStyles.phonePage]}>
-          <Text style={appStyles.phoneHeaderText}>
-            Your username
-          </Text>
+          <Text style={appStyles.phoneHeaderText}>Your username</Text>
 
-          <Text style={appStyles.username}>
-            @jonunflow
-          </Text>
+          <Text style={appStyles.username}>@jonunflow</Text>
 
-          <Text style={appStyles.changeUsername}>
-            Change your username
-          </Text>
-
+          <Text style={appStyles.changeUsername}>Change your username</Text>
         </View>
         <TouchableOpacity
           style={appStyles.nextButtonContainer}
@@ -48,6 +40,6 @@ export default function Username() {
           </LinearGradient>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    </AuthScreenWrapper>
+    </BackButtonWrapper>
   );
 }

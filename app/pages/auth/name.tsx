@@ -1,26 +1,34 @@
-import AuthScreenWrapper from "@/app/pages/auth/wrapper";
-import { appStyles } from "@/styles/auth";
-import { Text, TextInput, View, KeyboardAvoidingView, Platform, TouchableOpacity } from "react-native";
-import { useState } from "react";
+import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import { appStyles, colors } from "@/styles/auth.style";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
+import { useState } from "react";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function Name() {
-  const [firstname, setFirstName] = useState<string>('');
-  const [lastname, setLastName] = useState<string>('');
-  
+  const [firstname, setFirstName] = useState<string>("");
+  const [lastname, setLastName] = useState<string>("");
+
   return (
-    <AuthScreenWrapper>
+    <BackButtonWrapper>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={{ flex: 1, justifyContent: 'space-between' }}>
+        style={{ flex: 1, justifyContent: "space-between" }}
+      >
         <View style={[appStyles.container, appStyles.phonePage]}>
           <Text style={appStyles.otpHeaderText}> What’s your name?</Text>
           <View style={appStyles.inputContainer}>
             <TextInput
               style={appStyles.nameTextInput}
               placeholder="First name"
-              placeholderTextColor="#999"
+              placeholderTextColor={ colors.placeHolderColor }
               value={firstname}
               onChangeText={setFirstName}
               keyboardType="default"
@@ -32,7 +40,7 @@ export default function Name() {
             <TextInput
               style={appStyles.nameTextInput2}
               placeholder="Last name"
-              placeholderTextColor="#999"
+              placeholderTextColor={ colors.placeHolderColor }
               value={lastname}
               onChangeText={setLastName}
               keyboardType="default"
@@ -44,12 +52,13 @@ export default function Name() {
             People use real names on the app.
           </Text>
         </View>
-        
-         <TouchableOpacity style={appStyles.nextButtonContainer}
-            onPress={() => {
-              router.push("/pages/auth/username");
-            }}
-          >
+
+        <TouchableOpacity
+          style={appStyles.nextButtonContainer}
+          onPress={() => {
+            router.push("/pages/auth/username");
+          }}
+        >
           <LinearGradient
             colors={["#E2428F", "#BE66EB"]}
             start={{ x: 0, y: 0 }}
@@ -58,8 +67,8 @@ export default function Name() {
           >
             <Text style={appStyles.nextButtonText}>→</Text>
           </LinearGradient>
-       </TouchableOpacity>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
-    </AuthScreenWrapper>
+    </BackButtonWrapper>
   );
 }

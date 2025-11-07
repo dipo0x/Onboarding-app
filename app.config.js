@@ -1,4 +1,6 @@
-{
+import 'dotenv/config';
+
+export default {
   "expo": {
     "name": "onboarding-app",
     "slug": "onboarding-app",
@@ -49,6 +51,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      AWS_S3_BUCKET_NAME: process.env.AWS_S3_BUCKET_NAME,
+      AWS_REGION: process.env.AWS_REGION,
+      AWS_ACCESS_KEY: process.env.AWS_ACCESS_KEY,
+      AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
+    
     }
   }
-}
+};
