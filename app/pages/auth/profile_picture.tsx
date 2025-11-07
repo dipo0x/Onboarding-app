@@ -3,6 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import SkipButtonWrapper from "./generic/skip_button_wrapper";
+import { ColorValue } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import { useEffect, useState } from "react";
 import awsHelper from "@/app/helpers/aws.helper";
@@ -36,8 +37,10 @@ export default function ProfilePicture() {
     }
   };
 
+  const buttonColors: readonly [ColorValue, ColorValue] = image?.isNew ? ["#E2428F", "#BE66EB"] : ["#4C4C4C", "#4C4C4C"]
+
   return (
-    <SkipButtonWrapper> 
+    <SkipButtonWrapper>
       <View style={[appStyles.container, appStyles.phonePage]}>
         <View>
           <View style={appStyles.headerContainer}>
@@ -53,14 +56,16 @@ export default function ProfilePicture() {
           </View>
         </View>
         <TouchableOpacity
+         disabled={!image?.isNew}
           style={appStyles.profilePictureNextButton}
           onPress={() => {
             nextPage(image?.url || "");
           }}
         >
+          
           <View style={appStyles.profilePictureButton}>
             <LinearGradient
-              colors={["#E2428F", "#BE66EB"]}
+              colors={buttonColors}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
               style={appStyles.gradientBackground}

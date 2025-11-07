@@ -19,10 +19,9 @@ export const getFileType = (fileUri: string) => {
 
 export const fileToBuffer = async (fileUri: string) => {
     try {
-        console.log("file url", fileUri)
-           const file = new File(fileUri);
+        const file = new File(fileUri);
         const b64 = await file.base64();
-         const buffer = Buffer.from(b64, 'base64');
+        const buffer = Buffer.from(b64, 'base64');
     return buffer;
     } catch (error) {
         console.error('Error reading file as buffer:', error);

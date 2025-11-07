@@ -2,7 +2,6 @@ import { env } from "@/config/env.config";
 import { fileToBuffer, getFileName, getFileType } from "@/utils/file.util";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3"
 import { Credentials } from "@aws-sdk/types";
-import RNFS from 'react-native-fs';
 
 const options = {
   keyPrefix: "uploads/",
@@ -33,18 +32,14 @@ const awsHelper = {
 
       const s3Key = options.keyPrefix + file.name;
 
-      console.log("about to upload");
-
       await client.send(new PutObjectCommand({
         Bucket: options.bucket,
         Key: s3Key,
         Body: fileBuffer,
-        ContentType: file.type, // optional but recommended
+        ContentType: file.type,
       }));
 
-      // Construct public URL (works only if object is public)
       const url = `https://${options.bucket}.s3.${options.region}.amazonaws.com/${s3Key}`;
-      console.log(url)
       return url;
 
     } catch (error) {

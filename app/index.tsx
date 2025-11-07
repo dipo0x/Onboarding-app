@@ -22,7 +22,7 @@ export default function Onboarding() {
       <TouchableOpacity
         style={appStyles.signUpButton}
         onPress={() => {
-          router.push("/pages/auth/profile_picture");
+          router.push("/pages/auth/phone");
         }}
       >
         <View style={appStyles.buttonContainer}>
