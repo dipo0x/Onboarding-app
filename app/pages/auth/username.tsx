@@ -20,7 +20,7 @@ export default function Username() {
         <View style={[appStyles.container, appStyles.phonePage]}>
           <Text style={appStyles.phoneHeaderText}>Your username</Text>
 
-          <Text style={appStyles.username}>@jonunflow</Text>
+          <Text style={appStyles.username}>@dipo0x</Text>
 
           <Text style={appStyles.changeUsername}>Change your username</Text>
         </View>

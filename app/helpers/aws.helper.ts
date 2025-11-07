@@ -40,6 +40,7 @@ const awsHelper = {
       }));
 
       const url = `https://${options.bucket}.s3.${options.region}.amazonaws.com/${s3Key}`;
+      console.log(url)
       return url;
 
     } catch (error) {

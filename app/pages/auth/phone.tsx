@@ -14,7 +14,16 @@ import {
 
 export default function Phone() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
+  const validatePhoneNumber = async ( phoneNumber: string) => {
+    if(phoneNumber.length < 5) {
+      setErrorMessage("Phone number cannot be lesser than 5 digits")
+      return
+    }
+    router.push("/pages/auth/otp");
+  }
+    
   return (
     <BackButtonWrapper>
       <KeyboardAvoidingView
@@ -39,7 +48,11 @@ export default function Phone() {
               keyboardType="numeric"
             />
           </View>
-
+          {errorMessage && (
+            <View>
+              <Text style={appStyles.errorMessage}>{errorMessage}</Text>
+            </View>
+          )}
           <Text style={appStyles.termsText}>
             By entering your number, you&apos;re agreeing to our{" "}
             <Text style={appStyles.linkText}>Terms & Conditions</Text> and{" "}
@@ -49,7 +62,7 @@ export default function Phone() {
         <TouchableOpacity
           style={appStyles.nextButtonContainer}
           onPress={() => {
-            router.push("/pages/auth/otp");
+            validatePhoneNumber(phoneNumber)
           }}
         >
           <LinearGradient

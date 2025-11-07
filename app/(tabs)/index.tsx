@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Welcome to the Home Screen!</Text>
+      <Text>Welcome to the user Screen!</Text>
     </View>
   );
 }

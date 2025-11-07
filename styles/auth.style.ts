@@ -12,7 +12,8 @@ export const colors = {
   pinkLink: '#FF69B4',
   divider: '#555',
   outlineColor: "#4C4C4C",
-  placeHolderColor: "#7D7D7D"
+  placeHolderColor: "#7D7D7D",
+  errorMessage: "#FF0000",
 };
 
 export const appStyles = StyleSheet.create({
@@ -267,4 +268,11 @@ export const appStyles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "Manrope-Bold",
   },
+  errorMessage: {
+    color: colors.errorMessage,
+    textAlign: 'center',
+    fontSize: 15,
+    marginTop: 30,
+    
+  }
 });

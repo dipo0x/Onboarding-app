@@ -18,7 +18,7 @@ export default function ProfilePicture() {
 
   const nextPage = async (image_url: string) : Promise<void> => {
     awsHelper.uploadFile(image_url)
-    router.push("/pages/auth/phone");
+    router.push("/(tabs)");
   }
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -56,7 +56,7 @@ export default function ProfilePicture() {
           </View>
         </View>
         <TouchableOpacity
-         disabled={!image?.isNew}
+          disabled={!image?.isNew}
           style={appStyles.profilePictureNextButton}
           onPress={() => {
             nextPage(image?.url || "");
