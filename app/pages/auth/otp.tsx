@@ -1,4 +1,4 @@
-import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import BackButtonWrapper from "@/components/back_button";
 import { appStyles } from "@/styles/auth.style";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";

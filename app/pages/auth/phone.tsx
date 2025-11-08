@@ -1,4 +1,4 @@
-import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import BackButtonWrapper from "@/components/back_button";
 import { appStyles, colors } from "@/styles/auth.style";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
@@ -16,14 +16,14 @@ export default function Phone() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const validatePhoneNumber = async ( phoneNumber: string) => {
-    if(phoneNumber.length < 5) {
-      setErrorMessage("Phone number cannot be lesser than 5 digits")
-      return
+  const validatePhoneNumber = async (phoneNumber: string) => {
+    if (phoneNumber.length < 5) {
+      setErrorMessage("Phone number cannot be lesser than 5 digits");
+      return;
     }
     router.push("/pages/auth/otp");
-  }
-    
+  };
+
   return (
     <BackButtonWrapper>
       <KeyboardAvoidingView
@@ -42,7 +42,7 @@ export default function Phone() {
             <TextInput
               style={appStyles.textInput}
               placeholder="Phone number"
-              placeholderTextColor={ colors.placeHolderColor }
+              placeholderTextColor={colors.placeHolderColor}
               value={phoneNumber}
               onChangeText={setPhoneNumber}
               keyboardType="numeric"
@@ -62,7 +62,7 @@ export default function Phone() {
         <TouchableOpacity
           style={appStyles.nextButtonContainer}
           onPress={() => {
-            validatePhoneNumber(phoneNumber)
+            validatePhoneNumber(phoneNumber);
           }}
         >
           <LinearGradient

@@ -1,4 +1,4 @@
-import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import BackButtonWrapper from "@/components/back_button";
 import { appStyles, colors } from "@/styles/auth.style";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { OnboardingLabel } from "@/constant/auth.constant";
 
 export default function OTP() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -28,7 +29,7 @@ export default function OTP() {
             <TextInput
               style={appStyles.nameTextInput}
               placeholder="Age"
-              placeholderTextColor={ colors.placeHolderColor }
+              placeholderTextColor={colors.placeHolderColor}
               value={phoneNumber}
               onChangeText={setPhoneNumber}
               keyboardType="number-pad"
@@ -37,8 +38,7 @@ export default function OTP() {
           </View>
 
           <Text style={appStyles.termsText}>
-            This is to personalize your experience and will not be visible on
-            your profile.
+        {   OnboardingLabel.AGE_PERSONALIZATION}
           </Text>
         </View>
 

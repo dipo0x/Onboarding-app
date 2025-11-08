@@ -1,43 +1,44 @@
+import awsHelper from "@/helpers/aws.helper";
 import { appStyles } from "@/styles/auth.style";
+import * as ImagePicker from "expo-image-picker";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import SkipButtonWrapper from "./generic/skip_button_wrapper";
-import { ColorValue } from "react-native";
-import * as ImagePicker from 'expo-image-picker';
-import { useEffect, useState } from "react";
-import awsHelper from "@/app/helpers/aws.helper";
+import { useState } from "react";
+import { ColorValue, Image, Text, TouchableOpacity, View } from "react-native";
+import SkipButtonWrapper from "../../../components/skip_button";
 
 export default function ProfilePicture() {
   interface Iimage {
-    url: string ;
+    url: string;
     isNew: boolean;
   }
   const router = useRouter();
   const [image, setImage] = useState<Iimage | null>(null);
 
-  const nextPage = async (image_url: string) : Promise<void> => {
-    awsHelper.uploadFile(image_url)
+  const nextPage = async (image_url: string): Promise<void> => {
+    awsHelper.uploadFile(image_url);
     router.push("/(tabs)");
-  }
+  };
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images', 'videos'],
+      mediaTypes: ["images", "videos"],
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
 
     if (!result.canceled) {
-      const image_url = result.assets[0].uri!
+      const image_url = result.assets[0].uri!;
       setImage({
         url: image_url,
-        isNew: true
-    })
+        isNew: true,
+      });
     }
   };
 
-  const buttonColors: readonly [ColorValue, ColorValue] = image?.isNew ? ["#E2428F", "#BE66EB"] : ["#4C4C4C", "#4C4C4C"]
+  const buttonColors: readonly [ColorValue, ColorValue] = image?.isNew
+    ? ["#E2428F", "#BE66EB"]
+    : ["#4C4C4C", "#4C4C4C"];
 
   return (
     <SkipButtonWrapper>
@@ -50,7 +51,11 @@ export default function ProfilePicture() {
             <TouchableOpacity onPress={pickImage}>
               <Image
                 style={appStyles.profilePictureContainer}
-                source={image ? { uri: image.url } : require('../../../assets/images/app/add-photo.png')}
+                source={
+                  image
+                    ? { uri: image.url }
+                    : require("../../../assets/images/app/add-photo.png")
+                }
               />
             </TouchableOpacity>
           </View>
@@ -62,7 +67,6 @@ export default function ProfilePicture() {
             nextPage(image?.url || "");
           }}
         >
-          
           <View style={appStyles.profilePictureButton}>
             <LinearGradient
               colors={buttonColors}

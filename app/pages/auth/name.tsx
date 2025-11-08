@@ -1,4 +1,4 @@
-import BackButtonWrapper from "@/app/pages/auth/generic/back_button_wrapper";
+import BackButtonWrapper from "@/components/back_button";
 import { appStyles, colors } from "@/styles/auth.style";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { OnboardingLabel } from "@/constant/auth.constant";
 
 export default function Name() {
   const [firstname, setFirstName] = useState<string>("");
@@ -28,7 +29,7 @@ export default function Name() {
             <TextInput
               style={appStyles.nameTextInput}
               placeholder="First name"
-              placeholderTextColor={ colors.placeHolderColor }
+              placeholderTextColor={colors.placeHolderColor}
               value={firstname}
               onChangeText={setFirstName}
               keyboardType="default"
@@ -40,7 +41,7 @@ export default function Name() {
             <TextInput
               style={appStyles.nameTextInput2}
               placeholder="Last name"
-              placeholderTextColor={ colors.placeHolderColor }
+              placeholderTextColor={colors.placeHolderColor}
               value={lastname}
               onChangeText={setLastName}
               keyboardType="default"
@@ -49,7 +50,7 @@ export default function Name() {
           </View>
 
           <Text style={appStyles.termsText}>
-            People use real names on the app.
+           {OnboardingLabel.NAME_REQUIRED}
           </Text>
         </View>
 
