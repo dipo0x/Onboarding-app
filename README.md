@@ -1,50 +1,15 @@
-# Welcome to your Expo app 👋
+# Onboarding app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img width="1512" height="674" alt="Screenshot 2025-11-11 at 9 40 04 PM" src="https://github.com/user-attachments/assets/262ef593-f60e-4dd2-805a-6aeced9eaa2b" />
 
-## Get started
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+<img width="458" height="904" alt="Screenshot 2025-11-11 at 9 35 17 PM" src="https://github.com/user-attachments/assets/3b61e85c-f274-42da-b317-d29d9fb3f773" />
+<img width="522" height="901" alt="Screenshot 2025-11-11 at 9 36 03 PM" src="https://github.com/user-attachments/assets/55dd1a72-6d01-4807-be61-104f2acfecf9" />
+<img width="531" height="899" alt="Screenshot 2025-11-11 at 9 36 18 PM" src="https://github.com/user-attachments/assets/bf3bc580-8d4e-4c41-b2d5-9121f437c966" />
+<img width="546" height="896" alt="Screenshot 2025-11-11 at 9 36 30 PM" src="https://github.com/user-attachments/assets/ff145786-131d-4e8f-8889-0c10c4a05af8" />
+<img width="497" height="895" alt="Screenshot 2025-11-11 at 9 36 36 PM" src="https://github.com/user-attachments/assets/7d598b4e-363e-4261-8d50-39af3e333dc1" />
+<img width="543" height="907" alt="Screenshot 2025-11-11 at 9 36 46 PM" src="https://github.com/user-attachments/assets/56f828c6-97da-4a90-af46-ca2d2a0a9560" />
+<img width="510" height="895" alt="Screenshot 2025-11-11 at 9 37 16 PM" src="https://github.com/user-attachments/assets/8aefa1b1-5496-4ae3-b374-ed3f6f9afe0b" />
+<img width="523" height="890" alt="Screenshot 2025-11-11 at 9 37 24 PM" src="https://github.com/user-attachments/assets/4379ad11-5aa4-4785-a451-403da81cc291" />
